@@ -32,10 +32,10 @@ If everything works properly, navigate to [http://localhost:3000](http://localho
 
 ## Design and Documentation
 
- The backend was made with Express.js, see [https://expressjs.com/](https://expressjs.com/). The frontend was made with Next.js, see [https://nextjs.org/](https://nextjs.org/). The API endpoint created by the backend allows get requests to a url of the form [http://localhost:5000/api/v1/\<ZipCode\>], where <ZipCode> is replaced by a user entered postal code. 
+ The backend was made with Express.js, see [https://expressjs.com/](https://expressjs.com/). The frontend was made with Next.js, see [https://nextjs.org/](https://nextjs.org/). The API endpoint created by the backend allows get requests to a url of the form [http://localhost:5000/api/v1/\<ZipCode\>](http://localhost:5000/api/v1/\<ZipCode\>), where <ZipCode> is replaced by a user entered postal code. 
 The returned data is a list of addresses in the form 
 ```json
-Address = {
+{
   Id: string;
   Text: string;
   Description: string;
