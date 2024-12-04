@@ -14,7 +14,7 @@ App listening on port 5000!
 ```
 If so, open a new terminal and continue to the next phase.
 
-## Setting Up the Frontend
+## Set Up the Frontend
 To set up the client side, we again need to install some node modules and then run the application:
 ```bash
 cd client
