@@ -535,9 +535,6 @@ video {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
-.p-4 {
-  padding: 1rem;
-}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

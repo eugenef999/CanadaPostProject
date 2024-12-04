@@ -25,12 +25,9 @@ const Home = () => {
     }
   };
 
-  //useEffect(() => {
-  //getUsers();
-  //}, []);
-
-  const [inputValue, setInputValue] = useState(""); // State to store input value
+  const [inputValue, setInputValue] = useState("");
   const [isSearch, setIsSearch] = useState(false);
+  const [invalidZipCode, setInvalidZipCode] = useState(false);
 
   // Handle input change
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +38,13 @@ const Home = () => {
   // Handle form submission
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    getUsers(inputValue);
+    const zipRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+    if (zipRegex.test(inputValue)) {
+      setInvalidZipCode(false);
+      getUsers(inputValue);
+    } else {
+      setInvalidZipCode(true);
+    }
     setInputValue(""); // Clear the input box
     setIsSearch(true);
   };
@@ -67,12 +70,18 @@ const Home = () => {
         </button>
       </form>
       <ul className="list-group">
-        {isSearch && data.length === 0 && (
+        {invalidZipCode && (
+          <p>You entered an improperly formatted postal code.</p>
+        )}
+        {!invalidZipCode && isSearch && data.length === 0 && (
           <p>Sorry, addresses with that postal code were not found.</p>
         )}
-        {data.length != 0 &&
+        {!invalidZipCode &&
+          data.length != 0 &&
           data.map((address) => (
-            <li key={address.Id}>{address.Text + "," + address.Description}</li>
+            <li key={address.Id}>
+              {address.Text + ", " + address.Description}
+            </li>
           ))}
       </ul>
     </>
