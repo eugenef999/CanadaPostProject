@@ -36,9 +36,9 @@ If everything works properly, navigate to [http://localhost:3000](http://localho
 The returned data is a list of addresses in the form 
 ```json
 {
-  "Id": "string";
-  "Text": "string";
-  "Description": "string";
+  "Id": "string",
+  "Text": "string",
+  "Description": "string",
 }
 ```
 where Text is the street number and name, Description gives the city, province, postal code. For example, the url [http://localhost:5000/api/v1/H7P3P5](http://localhost:5000/api/v1/H7P3P5) gives 
