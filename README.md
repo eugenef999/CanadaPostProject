@@ -41,7 +41,7 @@ The returned data is a list of addresses in the form
   "Description": "string",
 }
 ```
-where Text is the street number and name, Description gives the city, province, postal code. For example, the url [http://localhost:5000/api/v1/H7P3P5](http://localhost:5000/api/v1/H7P3P5) gives 
+where Text gives the street address, Description gives the city, province, postal code. For example, the url [http://localhost:5000/api/v1/H7P3P5](http://localhost:5000/api/v1/H7P3P5) gives 
 
 ```json
 {
