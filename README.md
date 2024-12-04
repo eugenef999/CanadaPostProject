@@ -4,7 +4,7 @@ This is a project which allows users to find addresses by postal code.
 Perform the following steps.
 1. Install Node.js from [https://nodejs.org/en/](https://nodejs.org/en/) if not already intalled.
 2. Clone this project (or download and unpack its zip file) to a local folder.
-3. Open a terminal.
+3. Open a terminal and navigate to the project folder.
 
 ## Set Up the Backend
 First, install node modules and start the server:
