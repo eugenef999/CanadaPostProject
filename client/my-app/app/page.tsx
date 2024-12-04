@@ -23,9 +23,11 @@ const Home = () => {
     }
   };
 
+  //For submission form (where user enters a ZiP code)
   const [inputValue, setInputValue] = useState("");
   const [isSearch, setIsSearch] = useState(false);
   const [invalidZipCode, setInvalidZipCode] = useState(false);
+  const [submittedValue, setSubmittedValue] = useState("");
 
   // Handle input change for the form
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +47,7 @@ const Home = () => {
     }
     setInputValue(""); // Clear the input box
     setIsSearch(true);
+    setSubmittedValue(inputValue);
   };
 
   //display form and the returned addresses
@@ -75,11 +78,14 @@ const Home = () => {
       </form>
       <ul className="list-group">
         {invalidZipCode && (
-          <strong>You entered an improperly formatted postal code!</strong>
+          <strong>
+            You entered {submittedValue}, which is an improperly formatted
+            postal code!
+          </strong>
         )}
         {!invalidZipCode && isSearch && data.length === 0 && (
           <strong>
-            Sorry, addresses with that postal code were not found...
+            Sorry, addresses with postal code {submittedValue} were not found...
           </strong>
         )}
         {!invalidZipCode && isSearch && data.length > 0 && (
